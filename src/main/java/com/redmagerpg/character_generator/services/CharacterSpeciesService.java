@@ -3,6 +3,7 @@ package com.redmagerpg.character_generator.services;
 import com.redmagerpg.character_generator.dto.CharacterSpeciesDTO;
 import com.redmagerpg.character_generator.entities.CharacterSpecies;
 import com.redmagerpg.character_generator.repositories.CharacterSpeciesRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,7 +23,9 @@ public class CharacterSpeciesService {
     }
 
     public CharacterSpeciesDTO getSpeciesById(long id) {
-        CharacterSpecies species = characterSpeciesRepository.findById(id).orElse(null);
+        CharacterSpecies species = characterSpeciesRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Character Species with id " + id + " not found"));
+
         return new CharacterSpeciesDTO(species);
     }
 }

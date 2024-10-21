@@ -14,8 +14,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/species")
 public class CharacterSpeciesController {
-    @Autowired
-    private CharacterSpeciesService characterSpeciesService;
+
+    private final CharacterSpeciesService characterSpeciesService;
+
+    public CharacterSpeciesController(CharacterSpeciesService characterSpeciesService) {
+        this.characterSpeciesService = characterSpeciesService;
+    }
 
     @GetMapping()
     public ResponseEntity<List<CharacterSpeciesDTO>> getSpecies() {
