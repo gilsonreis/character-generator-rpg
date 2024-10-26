@@ -1,29 +1,3 @@
-drop table character_species;
-drop table character_class;
-drop table deities;
-
-CREATE TABLE character_species
-(
-    id BIGINT,
-    description TEXT NOT NULL,
-    name VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE character_class
-(
-    id BIGINT,
-    description TEXT NOT NULL,
-    name VARCHAR(255) NOT NULL
-);
-
-create table deities
-(
-    id          bigint,
-    description TEXT    null,
-    name        varchar(50) not null,
-    proficiency TEXT  null
-);
-
 INSERT INTO character_class (id, name, description) VALUES (1, 'Bardo', 'Os Bardos são artistas e contadores de histórias habilidosos que usam sua música, poesia e charme para influenciar e inspirar aqueles ao seu redor. Eles são viajantes ávidos, buscando aventuras e experiências para enriquecer suas performances e expandir seu repertório. Os Bardos são mestres em se adaptar a diferentes situações e são valorizados por sua versatilidade e capacidade de entreter e motivar aliados.');
 INSERT INTO character_class (id, name, description) VALUES (2, 'Guerreiro', 'Os Campeões Aldorianos são guerreiros resolutos, imbuídos de um profundo senso de dever para com a proteção de Aldoria. São mestres em combate corpo a corpo, hábeis no manuseio de várias armas e armaduras. Em sua busca por excelência marcial, esses guerreiros dedicam suas vidas ao treinamento rigoroso e à defesa incansável do reino.');
 INSERT INTO character_class (id, name, description) VALUES (3, 'Ladino', 'O Ladino é um mestre das sombras e da astúcia, habilidoso em se mover silenciosamente, desarmar armadilhas e desvendar segredos. Eles são especialistas em furtividade, combate furtivo e no uso de venenos, tornando-se uma ameaça mortal para seus inimigos quando atacam das sombras.');
@@ -36,3 +10,9 @@ INSERT INTO character_species (id, name, description) VALUES (3, 'Humanos', 'Os 
 INSERT INTO deities (id, description, name, proficiency) VALUES (1, 'Thalorin é o deus da ordem e da justiça. Ele é retratado como um ser imponente de barba longa, vestindo uma armadura brilhante e segurando uma espada flamejante que representa a lei. ', 'Thalorin, o Forjador Celestial', '**Julgamento:**  **Estratégia Militar:**  **Devoção:** ');
 INSERT INTO deities (id, description, name, proficiency) VALUES (2, 'Lunara é uma deusa neutra que representa o equilíbrio e a harmonia na natureza. Ela é retratada como uma elfa celestial com cabelos prateados e olhos que brilham como as estrelas. ', 'Lunara, a Guardiã da Natureza', '**Herbalismo:** **Empatia Animal:** **Caça e Rastreamento:**');
 INSERT INTO deities (id, description, name, proficiency) VALUES (3, 'Tharok é o deus da tempestade e do caos. Ele é representado como um gigante com pele azul e cabelos que se assemelham a relâmpagos. ', 'Tharok, o Senhor das Tempestades', 'Navegação: Pirataria: Desafio:');
+
+INSERT INTO skills (id, description, name) VALUES (1, 'Esta perícia representa a habilidade do personagem em se movimentar com agilidade e destreza, realizando acrobacias e saltos arriscados. É útil em situações que envolvem equilíbrio, escapadas e movimentos acrobáticos em combate.', 'Acrobacia');
+INSERT INTO skills (id, description, name) VALUES (2, 'Alquimia é a habilidade de criar e manipular poções, elixires e substâncias alquímicas. Personagens com essa perícia podem identificar ingredientes, preparar poções e até mesmo criar novas fórmulas alquímicas para diversos fins.', 'Alquimia');
+INSERT INTO skills (id, description, name) VALUES (3, 'Arcanismo representa o conhecimento e compreensão da magia e dos artefatos mágicos. Personagens com essa perícia podem identificar feitiços, compreender símbolos arcanos e até mesmo realizar rituais mágicos mais complexos.', 'Arcanismo');
+INSERT INTO skills (id, description, name) VALUES (4, 'Astronomia é a perícia relacionada ao estudo dos astros, estrelas e planetas. Personagens com essa habilidade podem navegar pelo céu noturno, prever eventos astronômicos e até mesmo interpretar sinais celestiais.', 'Astronomia');
+INSERT INTO skills (id, description, name) VALUES (5, 'Atletismo representa a força física e habilidade atlética do personagem. É útil em situações que exigem escaladas, natação, corridas e outras atividades físicas intensas.', 'Atletismo');
